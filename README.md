@@ -10,10 +10,10 @@ It includes product discovery, search, category filtering, cart and wishlist man
 
 ## 🌐 Live Demo
 
-🚀 **Live Application:** Coming Soon
+🚀 **Live Application:** [https://nexoracart-kx7j.onrender.com/](https://nexoracart-kx7j.onrender.com/)
 
 🔗 **GitHub Repository:**  
-https://github.com/ManjeetPrabhakarRawat/CodeAlpha_NexoraCart
+[https://github.com/ManjeetPrabhakarRawat/CodeAlpha_NexoraCart](https://github.com/ManjeetPrabhakarRawat/CodeAlpha_NexoraCart)
 
 ---
 
