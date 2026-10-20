@@ -1,16 +1,27 @@
 # 🛍️ NexoraCart
 
-NexoraCart is a full-stack MERN e-commerce platform with secure authentication, product management, cart and wishlist functionality, checkout, order processing, and role-based administration.
+NexoraCart is a modern full-stack MERN e-commerce platform designed to provide a secure, responsive, and production-oriented online shopping experience.
+
+It includes product discovery, search, category filtering, cart and wishlist management, secure checkout, order processing, customer account isolation, and role-based administration.
+
+> **Shop smarter. Live better.**
+
+---
 
 ## 🌐 Live Demo
 
-- **Frontend:** Coming Soon
-- **Backend API:** Coming Soon
+🚀 **Live Application:** Coming Soon
 
-## ✨ Features
+🔗 **GitHub Repository:**  
+https://github.com/ManjeetPrabhakarRawat/CodeAlpha_NexoraCart
 
-### 🛒 Shopping
-- Responsive e-commerce interface
+---
+
+# ✨ Features
+
+## 🛒 Shopping
+
+- Modern responsive e-commerce interface
 - Product browsing by category
 - Product search
 - Product detail pages
@@ -18,56 +29,86 @@ NexoraCart is a full-stack MERN e-commerce platform with secure authentication, 
 - Wishlist
 - Checkout
 - Stock-aware shopping
+- Discount and pricing display
+- Responsive navigation
+- Category-based product filtering
+- No-results search state
 
-### 📦 Products
-- Product creation, editing and deletion
-- Category management
-- Pricing and discounts
-- Ratings and review counts
+## 📦 Product Management
+
+- Create products
+- Update products
+- Delete products
+- Product categories
+- Product pricing
+- Discount management
+- Product ratings
+- Review counts
 - Stock management
 - Featured products
 - Product images
+- Category filtering
 
-### 🧾 Orders
+## 🧾 Order Management
+
 - Secure order creation
 - Customer-specific order history
 - Order details
+- Shipping address
 - Server-side price calculation
 - Server-side stock validation
+- Inventory updates
 - Order status management
 - Admin-controlled order processing
 
-### 👤 Accounts
-- User registration and login
-- Account-specific cart, wishlist and orders
-- Profile and settings
-- Customer data isolation
+## 👤 User Accounts
 
-### 👨‍💼 Admin
-- Admin dashboard
+- User registration
+- Secure login
+- Logout
+- JWT authentication
+- HTTP-only authentication cookies
+- Profile management
+- Account settings
+- Customer-specific cart
+- Customer-specific wishlist
+- Customer-specific orders
+
+## 👨‍💼 Admin
+
+- Dedicated admin dashboard
 - Product management
 - Order management
 - Order status updates
-- Backend-enforced RBAC
-- Separate customer and admin access
+- Backend role-based access control
+- Customer/admin separation
+- Admin-only APIs
+- Protected administrative operations
 
-### 🔐 Security
+## 🔐 Security
+
 - JWT authentication
 - HTTP-only cookies
 - bcrypt password hashing
 - CSRF protection
 - Role-based access control
+- Customer ownership validation
 - CORS allow-list
-- Helmet
+- Helmet security headers
 - Rate limiting
 - Request validation
-- ObjectId validation
-- Server-side price and stock validation
+- MongoDB ObjectId validation
+- Server-side price validation
+- Server-side stock validation
 - Environment-based secrets
+- Protected admin routes
 
-## 🛠️ Tech Stack
+---
 
-### Frontend
+# 🛠️ Technology Stack
+
+## 🎨 Frontend
+
 - React
 - Vite
 - JavaScript
@@ -75,7 +116,8 @@ NexoraCart is a full-stack MERN e-commerce platform with secure authentication, 
 - Context API
 - CSS
 
-### Backend
+## ⚙️ Backend
+
 - Node.js
 - Express.js
 - JavaScript
@@ -86,217 +128,738 @@ NexoraCart is a full-stack MERN e-commerce platform with secure authentication, 
 - express-rate-limit
 - cookie-parser
 
-### Database
+## 🗄️ Database
+
 - MongoDB
 - Mongoose
 
-## 🏗️ System Architecture
+---
+
+# 🏗️ System Architecture
 
 ```mermaid
 flowchart LR
-    U[Customer / Admin] --> FE[React Frontend]
-    FE --> API[API Service]
-    API --> BE[Express Backend]
-    BE --> SEC[Security Middleware]
-    SEC --> AUTH[Authentication / RBAC]
-    AUTH --> CTRL[Controllers]
-    CTRL --> MODEL[Mongoose Models]
-    MODEL --> DB[(MongoDB)]
-    SEC --> JWT[JWT + HTTP-only Cookies]
-    SEC --> CSRF[CSRF Protection]
-    SEC --> RATE[Rate Limiting]
-    SEC --> HELMET[Helmet + CORS]
 
-🔄 Application Workflow
-#chatgpt-mermaid-_r_7qm_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7qm_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7qm_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7qm_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7qm_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7qm_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7qm_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7qm_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7qm_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7qm_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7qm_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7qm_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7qm_ p{margin:0;}#chatgpt-mermaid-_r_7qm_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7qm_ .label text,#chatgpt-mermaid-_r_7qm_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .node rect,#chatgpt-mermaid-_r_7qm_ .node circle,#chatgpt-mermaid-_r_7qm_ .node ellipse,#chatgpt-mermaid-_r_7qm_ .node polygon,#chatgpt-mermaid-_r_7qm_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .rough-node .label text,#chatgpt-mermaid-_r_7qm_ .node .label text,#chatgpt-mermaid-_r_7qm_ .image-shape .label,#chatgpt-mermaid-_r_7qm_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7qm_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .rough-node .label,#chatgpt-mermaid-_r_7qm_ .node .label,#chatgpt-mermaid-_r_7qm_ .image-shape .label,#chatgpt-mermaid-_r_7qm_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7qm_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7qm_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7qm_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7qm_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7qm_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7qm_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7qm_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7qm_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7qm_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7qm_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7qm_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7qm_ .icon-shape,#chatgpt-mermaid-_r_7qm_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7qm_ .icon-shape p,#chatgpt-mermaid-_r_7qm_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7qm_ .icon-shape .label rect,#chatgpt-mermaid-_r_7qm_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7qm_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7qm_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7qm_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7qm_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7qm_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7qm_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7qm_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7qm_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7qm_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7qm_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7qm_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7qm_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7qm_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7qm_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7qm_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .node rect,#chatgpt-mermaid-_r_7qm_ .node circle,#chatgpt-mermaid-_r_7qm_ .node ellipse,#chatgpt-mermaid-_r_7qm_ .node polygon,#chatgpt-mermaid-_r_7qm_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7qm_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7qm_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7qm_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7qm_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7qm_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}Open WebsiteBrowse ProductsSearch / CategoryProduct DetailsCart / WishlistAuthenticated?Login / RegisterCheckoutServer ValidationCreate OrderOrder ConfirmationOrder TrackingNoYes
+    U[👤 User / Admin] --> FE[🌐 React Frontend]
 
+    FE --> AUTH[🔐 Authentication]
+    FE --> SHOP[🛒 Shopping]
+    FE --> ADMIN[👨‍💼 Admin Panel]
 
+    AUTH --> BE[⚙️ Express Backend]
+    SHOP --> BE
+    ADMIN --> BE
 
+    BE --> SEC[🛡️ Security Middleware]
+    SEC --> CTRL[🎯 Controllers]
 
-🛒 Customer Shopping Workflow
-#chatgpt-mermaid-_r_7s9_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7s9_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7s9_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7s9_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7s9_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7s9_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7s9_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7s9_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7s9_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7s9_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7s9_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7s9_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7s9_ p{margin:0;}#chatgpt-mermaid-_r_7s9_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7s9_ .label text,#chatgpt-mermaid-_r_7s9_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .node rect,#chatgpt-mermaid-_r_7s9_ .node circle,#chatgpt-mermaid-_r_7s9_ .node ellipse,#chatgpt-mermaid-_r_7s9_ .node polygon,#chatgpt-mermaid-_r_7s9_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .rough-node .label text,#chatgpt-mermaid-_r_7s9_ .node .label text,#chatgpt-mermaid-_r_7s9_ .image-shape .label,#chatgpt-mermaid-_r_7s9_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7s9_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .rough-node .label,#chatgpt-mermaid-_r_7s9_ .node .label,#chatgpt-mermaid-_r_7s9_ .image-shape .label,#chatgpt-mermaid-_r_7s9_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7s9_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7s9_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7s9_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7s9_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7s9_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7s9_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7s9_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7s9_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7s9_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7s9_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7s9_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7s9_ .icon-shape,#chatgpt-mermaid-_r_7s9_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7s9_ .icon-shape p,#chatgpt-mermaid-_r_7s9_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7s9_ .icon-shape .label rect,#chatgpt-mermaid-_r_7s9_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7s9_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7s9_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7s9_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7s9_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7s9_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7s9_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7s9_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7s9_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7s9_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7s9_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7s9_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7s9_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7s9_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7s9_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7s9_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .node rect,#chatgpt-mermaid-_r_7s9_ .node circle,#chatgpt-mermaid-_r_7s9_ .node ellipse,#chatgpt-mermaid-_r_7s9_ .node polygon,#chatgpt-mermaid-_r_7s9_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7s9_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7s9_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7s9_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7s9_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7s9_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}HomeCategoryProduct ListingProduct DetailsCartWishlistCheckoutShipping AddressOrder ValidationOrder CreatedOrders
+    CTRL --> PROD[📦 Product Logic]
+    CTRL --> ORDER[🧾 Order Logic]
+    CTRL --> USER[👤 User Logic]
+    CTRL --> ADMINAPI[👨‍💼 Admin Logic]
 
+    PROD --> DB[(🗄️ MongoDB)]
+    ORDER --> DB
+    USER --> DB
+    ADMINAPI --> DB
+```
 
+---
 
+# 🔄 Application Workflow
 
-📦 Order Processing Workflow
-#chatgpt-mermaid-_r_7si_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7si_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7si_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7si_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7si_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7si_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7si_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7si_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7si_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7si_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7si_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7si_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7si_ p{margin:0;}#chatgpt-mermaid-_r_7si_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7si_ .label text,#chatgpt-mermaid-_r_7si_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .node rect,#chatgpt-mermaid-_r_7si_ .node circle,#chatgpt-mermaid-_r_7si_ .node ellipse,#chatgpt-mermaid-_r_7si_ .node polygon,#chatgpt-mermaid-_r_7si_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .rough-node .label text,#chatgpt-mermaid-_r_7si_ .node .label text,#chatgpt-mermaid-_r_7si_ .image-shape .label,#chatgpt-mermaid-_r_7si_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7si_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .rough-node .label,#chatgpt-mermaid-_r_7si_ .node .label,#chatgpt-mermaid-_r_7si_ .image-shape .label,#chatgpt-mermaid-_r_7si_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7si_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7si_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7si_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7si_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7si_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7si_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7si_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7si_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7si_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7si_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7si_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7si_ .icon-shape,#chatgpt-mermaid-_r_7si_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7si_ .icon-shape p,#chatgpt-mermaid-_r_7si_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7si_ .icon-shape .label rect,#chatgpt-mermaid-_r_7si_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7si_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7si_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7si_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7si_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7si_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7si_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7si_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7si_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7si_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7si_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7si_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7si_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7si_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7si_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7si_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7si_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7si_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7si_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7si_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .node rect,#chatgpt-mermaid-_r_7si_ .node circle,#chatgpt-mermaid-_r_7si_ .node ellipse,#chatgpt-mermaid-_r_7si_ .node polygon,#chatgpt-mermaid-_r_7si_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7si_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7si_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7si_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7si_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7si_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}Checkout RequestAuthenticate UserValidate CSRFRead Current ProductsValidate PricesValidate StockCalculate TotalCreate OrderUpdate StockReturn Order
+```mermaid
+flowchart LR
 
+    A[🌐 Open Website] --> B[🛍️ Browse Products]
 
+    B --> C[🔎 Search / Category]
+    C --> D[📦 Product Details]
 
+    D --> E[🛒 Cart]
+    D --> F[❤️ Wishlist]
 
-🔐 Security Architecture
-#chatgpt-mermaid-_r_7sr_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7sr_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7sr_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7sr_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7sr_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7sr_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7sr_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7sr_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7sr_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7sr_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7sr_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7sr_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7sr_ p{margin:0;}#chatgpt-mermaid-_r_7sr_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7sr_ .label text,#chatgpt-mermaid-_r_7sr_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .node rect,#chatgpt-mermaid-_r_7sr_ .node circle,#chatgpt-mermaid-_r_7sr_ .node ellipse,#chatgpt-mermaid-_r_7sr_ .node polygon,#chatgpt-mermaid-_r_7sr_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .rough-node .label text,#chatgpt-mermaid-_r_7sr_ .node .label text,#chatgpt-mermaid-_r_7sr_ .image-shape .label,#chatgpt-mermaid-_r_7sr_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7sr_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .rough-node .label,#chatgpt-mermaid-_r_7sr_ .node .label,#chatgpt-mermaid-_r_7sr_ .image-shape .label,#chatgpt-mermaid-_r_7sr_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7sr_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7sr_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7sr_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7sr_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7sr_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7sr_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7sr_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7sr_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7sr_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7sr_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7sr_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7sr_ .icon-shape,#chatgpt-mermaid-_r_7sr_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7sr_ .icon-shape p,#chatgpt-mermaid-_r_7sr_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7sr_ .icon-shape .label rect,#chatgpt-mermaid-_r_7sr_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7sr_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7sr_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7sr_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7sr_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7sr_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7sr_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7sr_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7sr_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7sr_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7sr_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7sr_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7sr_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7sr_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7sr_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7sr_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .node rect,#chatgpt-mermaid-_r_7sr_ .node circle,#chatgpt-mermaid-_r_7sr_ .node ellipse,#chatgpt-mermaid-_r_7sr_ .node polygon,#chatgpt-mermaid-_r_7sr_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7sr_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7sr_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7sr_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7sr_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7sr_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}Client RequestCORSHelmetRate LimiterRequest ValidationHTTP-only CookieJWT AuthenticationCSRF ValidationRBAC / OwnershipControllerMongoDB
+    E --> G{🔐 Authenticated?}
 
+    G -->|No| H[🔑 Login / Register]
+    G -->|Yes| I[💳 Checkout]
 
+    H --> I
 
+    I --> J[🛡️ Server Validation]
+    J --> K[🧾 Create Order]
+    K --> L[📦 Update Stock]
+    L --> M[✅ Order Confirmation]
+```
 
-👤 Account Isolation Workflow
-#chatgpt-mermaid-_r_7t4_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7t4_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7t4_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7t4_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7t4_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7t4_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7t4_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7t4_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7t4_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7t4_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7t4_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7t4_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7t4_ p{margin:0;}#chatgpt-mermaid-_r_7t4_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7t4_ .label text,#chatgpt-mermaid-_r_7t4_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .node rect,#chatgpt-mermaid-_r_7t4_ .node circle,#chatgpt-mermaid-_r_7t4_ .node ellipse,#chatgpt-mermaid-_r_7t4_ .node polygon,#chatgpt-mermaid-_r_7t4_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .rough-node .label text,#chatgpt-mermaid-_r_7t4_ .node .label text,#chatgpt-mermaid-_r_7t4_ .image-shape .label,#chatgpt-mermaid-_r_7t4_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7t4_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .rough-node .label,#chatgpt-mermaid-_r_7t4_ .node .label,#chatgpt-mermaid-_r_7t4_ .image-shape .label,#chatgpt-mermaid-_r_7t4_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7t4_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7t4_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7t4_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7t4_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7t4_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7t4_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7t4_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7t4_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7t4_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7t4_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7t4_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7t4_ .icon-shape,#chatgpt-mermaid-_r_7t4_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7t4_ .icon-shape p,#chatgpt-mermaid-_r_7t4_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7t4_ .icon-shape .label rect,#chatgpt-mermaid-_r_7t4_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7t4_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7t4_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7t4_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7t4_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7t4_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7t4_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7t4_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7t4_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7t4_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7t4_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7t4_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7t4_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7t4_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7t4_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7t4_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .node rect,#chatgpt-mermaid-_r_7t4_ .node circle,#chatgpt-mermaid-_r_7t4_ .node ellipse,#chatgpt-mermaid-_r_7t4_ .node polygon,#chatgpt-mermaid-_r_7t4_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7t4_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7t4_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7t4_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7t4_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7t4_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}User LoginJWT CookieAuthenticated UserUser CartUser WishlistUser OrdersUser ProfileMongoDBAdminAdmin APIs
+---
 
+# 🛒 Customer Shopping Architecture
 
+```mermaid
+flowchart LR
 
+    HOME[🏠 Home] --> CAT[📂 Categories]
 
-👨‍💼 Admin Workflow
-#chatgpt-mermaid-_r_7un_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7un_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7un_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7un_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7un_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7un_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7un_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7un_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7un_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7un_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7un_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7un_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7un_ p{margin:0;}#chatgpt-mermaid-_r_7un_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7un_ .label text,#chatgpt-mermaid-_r_7un_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .node rect,#chatgpt-mermaid-_r_7un_ .node circle,#chatgpt-mermaid-_r_7un_ .node ellipse,#chatgpt-mermaid-_r_7un_ .node polygon,#chatgpt-mermaid-_r_7un_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .rough-node .label text,#chatgpt-mermaid-_r_7un_ .node .label text,#chatgpt-mermaid-_r_7un_ .image-shape .label,#chatgpt-mermaid-_r_7un_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7un_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .rough-node .label,#chatgpt-mermaid-_r_7un_ .node .label,#chatgpt-mermaid-_r_7un_ .image-shape .label,#chatgpt-mermaid-_r_7un_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7un_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7un_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7un_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7un_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7un_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7un_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7un_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7un_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7un_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7un_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7un_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7un_ .icon-shape,#chatgpt-mermaid-_r_7un_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7un_ .icon-shape p,#chatgpt-mermaid-_r_7un_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7un_ .icon-shape .label rect,#chatgpt-mermaid-_r_7un_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7un_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7un_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7un_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7un_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7un_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7un_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7un_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7un_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7un_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7un_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7un_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7un_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7un_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7un_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7un_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7un_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7un_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7un_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7un_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .node rect,#chatgpt-mermaid-_r_7un_ .node circle,#chatgpt-mermaid-_r_7un_ .node ellipse,#chatgpt-mermaid-_r_7un_ .node polygon,#chatgpt-mermaid-_r_7un_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7un_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7un_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7un_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7un_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7un_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}Admin LoginJWT AuthenticationAdmin Role CheckAdmin DashboardProduct ManagementOrder ManagementCreate / Update / DeleteView / Update StatusMongoDB
+    CAT --> LIST[📦 Product Listing]
 
+    LIST --> DETAIL[🔍 Product Details]
 
+    DETAIL --> CART[🛒 Cart]
+    DETAIL --> WISH[❤️ Wishlist]
 
+    CART --> CHECK[💳 Checkout]
 
-🗄️ Database Workflow
-#chatgpt-mermaid-_r_7v0_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_7v0_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7v0_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_7v0_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_7v0_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_7v0_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_7v0_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_7v0_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_7v0_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_7v0_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7v0_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7v0_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_7v0_ p{margin:0;}#chatgpt-mermaid-_r_7v0_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_7v0_ .label text,#chatgpt-mermaid-_r_7v0_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .node rect,#chatgpt-mermaid-_r_7v0_ .node circle,#chatgpt-mermaid-_r_7v0_ .node ellipse,#chatgpt-mermaid-_r_7v0_ .node polygon,#chatgpt-mermaid-_r_7v0_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .rough-node .label text,#chatgpt-mermaid-_r_7v0_ .node .label text,#chatgpt-mermaid-_r_7v0_ .image-shape .label,#chatgpt-mermaid-_r_7v0_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_7v0_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .rough-node .label,#chatgpt-mermaid-_r_7v0_ .node .label,#chatgpt-mermaid-_r_7v0_ .image-shape .label,#chatgpt-mermaid-_r_7v0_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_7v0_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_7v0_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7v0_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7v0_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_7v0_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7v0_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7v0_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7v0_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_7v0_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_7v0_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_7v0_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_7v0_ .icon-shape,#chatgpt-mermaid-_r_7v0_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_7v0_ .icon-shape p,#chatgpt-mermaid-_r_7v0_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_7v0_ .icon-shape .label rect,#chatgpt-mermaid-_r_7v0_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_7v0_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_7v0_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_7v0_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_7v0_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_7v0_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_7v0_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_7v0_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_7v0_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7v0_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_7v0_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_7v0_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7v0_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_7v0_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_7v0_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_7v0_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .node rect,#chatgpt-mermaid-_r_7v0_ .node circle,#chatgpt-mermaid-_r_7v0_ .node ellipse,#chatgpt-mermaid-_r_7v0_ .node polygon,#chatgpt-mermaid-_r_7v0_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_7v0_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_7v0_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_7v0_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_7v0_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_7v0_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}FrontendAPI RequestExpress RouteControllerBusiness LogicMongoose ModelMongoDB
+    CHECK --> ADDRESS[📍 Shipping Address]
 
+    ADDRESS --> VALIDATE[🛡️ Order Validation]
 
+    VALIDATE --> ORDER[🧾 Order Created]
 
+    ORDER --> HISTORY[📋 Order History]
+```
 
-📁 Project Structure
+---
+
+# 📦 Order Processing Architecture
+
+```mermaid
+flowchart LR
+
+    A[💳 Checkout Request] --> B[🔐 Authenticate User]
+
+    B --> C[🛡️ Validate CSRF]
+
+    C --> D[📦 Read Product Data]
+
+    D --> E[💰 Validate Current Prices]
+
+    E --> F[📊 Validate Stock]
+
+    F --> G[🧮 Calculate Total]
+
+    G --> H[🧾 Create Order]
+
+    H --> I[📦 Update Inventory]
+
+    I --> J[✅ Return Order]
+```
+
+---
+
+# 🔐 Security Architecture
+
+```mermaid
+flowchart LR
+
+    A[🌐 Client Request] --> B[CORS]
+
+    B --> C[🛡️ Helmet]
+
+    C --> D[🚦 Rate Limiter]
+
+    D --> E[✅ Request Validation]
+
+    E --> F[🍪 HTTP-only Cookie]
+
+    F --> G[🔑 JWT Authentication]
+
+    G --> H[🛡️ CSRF Validation]
+
+    H --> I[👤 RBAC / Ownership]
+
+    I --> J[🎯 Controller]
+
+    J --> K[(🗄️ MongoDB)]
+```
+
+---
+
+# 👤 Account Isolation Architecture
+
+```mermaid
+flowchart LR
+
+    LOGIN[🔐 User Login] --> JWT[🍪 JWT Cookie]
+
+    JWT --> USER[👤 Authenticated User]
+
+    USER --> CART[🛒 Personal Cart]
+    USER --> WISH[❤️ Personal Wishlist]
+    USER --> ORDERS[🧾 Personal Orders]
+    USER --> PROFILE[⚙️ Personal Profile]
+
+    CART --> DB[(🗄️ MongoDB)]
+    WISH --> DB
+    ORDERS --> DB
+    PROFILE --> DB
+
+    ADMIN[👨‍💼 Admin] --> ADMINAPI[🔐 Admin APIs]
+
+    ADMINAPI --> DB
+```
+
+---
+
+# 👨‍💼 Admin Architecture
+
+```mermaid
+flowchart LR
+
+    LOGIN[🔐 Admin Login] --> AUTH[🔑 JWT Authentication]
+
+    AUTH --> ROLE[🛡️ Admin Role Check]
+
+    ROLE --> DASH[📊 Admin Dashboard]
+
+    DASH --> PRODUCTS[📦 Product Management]
+    DASH --> ORDERS[🧾 Order Management]
+
+    PRODUCTS --> CREATE[➕ Create]
+    PRODUCTS --> UPDATE[✏️ Update]
+    PRODUCTS --> DELETE[🗑️ Delete]
+
+    ORDERS --> VIEW[👁️ View Orders]
+    ORDERS --> STATUS[🔄 Update Status]
+
+    CREATE --> DB[(🗄️ MongoDB)]
+    UPDATE --> DB
+    DELETE --> DB
+    VIEW --> DB
+    STATUS --> DB
+```
+
+---
+
+# 🗄️ Database Architecture
+
+```mermaid
+flowchart LR
+
+    FE[🌐 React Frontend] --> API[🔌 API Request]
+
+    API --> ROUTE[🛣️ Express Route]
+
+    ROUTE --> CTRL[🎯 Controller]
+
+    CTRL --> LOGIC[⚙️ Business Logic]
+
+    LOGIC --> MODEL[🧩 Mongoose Model]
+
+    MODEL --> DB[(🗄️ MongoDB)]
+
+    DB --> MODEL
+    MODEL --> LOGIC
+    LOGIC --> CTRL
+    CTRL --> API
+    API --> FE
+```
+
+---
+
+# 📈 Scalable Architecture
+
+```mermaid
+flowchart LR
+
+    USER[👤 Users] --> FRONTEND[🌐 React Frontend]
+
+    FRONTEND --> LB[⚖️ Load Balancer]
+
+    LB --> API1[⚙️ Express Instance]
+    LB --> API2[⚙️ Express Instance]
+
+    API1 --> DB[(🗄️ MongoDB)]
+    API2 --> DB
+
+    API1 --> CACHE[⚡ Redis Cache]
+    API2 --> CACHE
+
+    API1 --> STORAGE[☁️ Object Storage]
+    API2 --> STORAGE
+
+    STORAGE --> CDN[🚀 CDN]
+
+    API1 --> MONITOR[📊 Monitoring]
+    API2 --> MONITOR
+```
+
+---
+
+# 📊 Product Catalog
+
+NexoraCart contains **60 products** across 6 categories.
+
+| Category | Products |
+|---|---:|
+| Electronics | 10 |
+| Fashion | 10 |
+| Home & Kitchen | 10 |
+| Beauty & Personal Care | 10 |
+| Sports & Fitness | 10 |
+| Books & Stationery | 10 |
+| **Total** | **60** |
+
+---
+
+# 📁 Project Structure
+
+```text
 NexoraCart/
+│
 ├── backend/
+│   │
 │   ├── src/
 │   │   ├── config/
+│   │   │
 │   │   ├── controllers/
+│   │   │   ├── adminController.js
+│   │   │   ├── authController.js
+│   │   │   ├── orderController.js
+│   │   │   └── productController.js
+│   │   │
 │   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   ├── error.js
+│   │   │   └── security.js
+│   │   │
 │   │   ├── models/
+│   │   │   ├── Order.js
+│   │   │   ├── Product.js
+│   │   │   └── User.js
+│   │   │
 │   │   ├── routes/
+│   │   │   ├── admin.js
+│   │   │   ├── auth.js
+│   │   │   ├── orders.js
+│   │   │   └── products.js
+│   │   │
 │   │   ├── utils/
+│   │   │   ├── csrf.js
+│   │   │   └── jwt.js
+│   │   │
 │   │   └── seed.js
+│   │
 │   ├── .env.example
 │   ├── package.json
 │   └── server.js
+│
 ├── frontend/
+│   │
 │   ├── public/
+│   │   └── favicon.svg
+│   │
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   └── ProductCard.jsx
+│   │   │
 │   │   ├── context/
+│   │   │   └── AppContext.jsx
+│   │   │
 │   │   ├── pages/
+│   │   │   ├── Admin.jsx
+│   │   │   ├── Auth.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── OrderDetail.jsx
+│   │   │   ├── Orders.jsx
+│   │   │   ├── Product.jsx
+│   │   │   └── SimplePages.jsx
+│   │   │
 │   │   ├── services/
+│   │   │   └── api.js
+│   │   │
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── styles.css
+│   │
 │   ├── .env.example
 │   ├── index.html
 │   ├── package.json
 │   └── vite.config.js
+│
 ├── .gitignore
 └── README.md
+```
 
-📊 Product Catalog
-Category	Products
-Electronics	10
-Fashion	10
-Home & Kitchen	10
-Beauty & Personal Care	10
-Sports & Fitness	10
-Books & Stationery	10
-Total	60
+---
 
+# 🧩 Architecture Highlights
 
-🔒 Order Security
-During checkout, the backend:
-1. Reads current product data from MongoDB.
-2. Validates product availability.
-3. Validates stock.
-4. Calculates the order total.
-5. Creates the order.
-6. Updates inventory.
-Frontend-submitted prices and totals are not trusted.
-🧪 Testing
+## 🔐 Authentication
+
+Authentication is handled using JWT-based sessions with HTTP-only cookies.
+
+The backend validates authenticated requests before allowing access to protected resources.
+
+### Authentication Flow
+
+```text
+Register / Login
+       │
+       ▼
+Password Verification
+       │
+       ▼
+JWT Generation
+       │
+       ▼
+HTTP-only Cookie
+       │
+       ▼
+Authenticated Requests
+       │
+       ▼
+Protected API
+```
+
+---
+
+## 👤 Customer Data Isolation
+
+Customer-owned resources are protected by backend ownership checks.
+
+Each customer receives isolated:
+
+- Cart
+- Wishlist
+- Orders
+- Profile data
+
+The frontend does not determine ownership. The backend validates the authenticated user before returning or modifying protected resources.
+
+---
+
+## 🛒 Cart & Wishlist
+
+Cart and wishlist state is separated by authenticated customer.
+
+```text
+User Login
+    │
+    ▼
+Authenticated User
+    │
+    ├──► Cart
+    │
+    └──► Wishlist
+```
+
+This prevents users from accidentally sharing cart or wishlist data between accounts.
+
+---
+
+## 💳 Checkout Security
+
+Checkout calculations are performed on the backend.
+
+The backend does not trust:
+
+- Client-submitted prices
+- Client-submitted totals
+- Client-submitted stock values
+
+Instead, current product data is retrieved from MongoDB before the order is created.
+
+---
+
+## 📦 Inventory Management
+
+```text
+Product
+   │
+   ▼
+Current Stock
+   │
+   ▼
+Checkout Validation
+   │
+   ▼
+Stock Available?
+   │
+ ┌─┴─┐
+ │   │
+Yes  No
+ │   │
+ ▼   ▼
+Order  Reject
+ │
+ ▼
+Reduce Stock
+```
+
+---
+
+# 🔌 API Areas
+
+| API Area | Purpose |
+|---|---|
+| Authentication | Registration, login, logout and authentication |
+| Products | Product discovery and product management |
+| Orders | Order creation and order retrieval |
+| Admin | Product and order administration |
+| Health | API health verification |
+
+---
+
+# 🧪 Testing
+
+The application has been tested for:
+
 - Authentication
 - Customer account isolation
-- Cart and wishlist isolation
+- Cart isolation
+- Wishlist isolation
 - Order isolation
 - Admin/customer separation
 - Product management
 - Order management
-- Search and categories
+- Product search
+- Category filtering
 - Product details
 - Checkout
 - Stock handling
-- Production build
+- Backend health endpoint
+- Production frontend build
 - Dependency audit
-📦 Local Setup
-Prerequisites
+
+## ✅ Validation
+
+### Backend
+
+```text
+✓ npm install
+✓ 0 vulnerabilities
+✓ MongoDB connection
+✓ API health check
+✓ Production server start
+```
+
+### Frontend
+
+```text
+✓ npm install
+✓ npm audit
+✓ Production build
+✓ Vite build successful
+```
+
+---
+
+# 📦 Local Setup
+
+## ✅ Prerequisites
+
+Make sure the following are installed:
+
 - Node.js 18.18+
 - npm
 - Git
 - MongoDB or MongoDB Atlas
-Clone
-git clone https://github.com/ManjeetPrabhakarRawat/CodeAlpha_NexoraCart.git
-cd CodeAlpha_NexoraCart
 
-Backend
-cd backend
-npm install
-copy .env.example .env
-npm run seed
-npm run dev
+---
 
-Backend:
-http://localhost:5000
+# 🗄️ 1. Database Setup
 
-API:
-http://localhost:5000/api
+NexoraCart uses MongoDB.
 
-Backend .env:
+You can use either:
+
+- Local MongoDB
+- MongoDB Atlas
+
+Create the backend `.env` file using `.env.example`.
+
+```env
 PORT=5000
 NODE_ENV=development
+
 MONGO_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_secure_random_jwt_secret
+
 CLIENT_URL=http://localhost:5173
+
 TRUST_PROXY=0
+
 ADMIN_EMAIL=your_admin_email
 ADMIN_PASSWORD=your_admin_password
+```
 
-Frontend
+> ⚠️ Never commit your real `.env` file or production secrets to GitHub.
+
+---
+
+# ⚙️ 2. Backend Setup
+
+Open a terminal:
+
+```bash
+cd backend
+npm install
+```
+
+Seed the database:
+
+```bash
+npm run seed
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Backend server:
+
+```text
+http://localhost:5000
+```
+
+API:
+
+```text
+http://localhost:5000/api
+```
+
+Health endpoint:
+
+```text
+http://localhost:5000/api/health
+```
+
+---
+
+# 🎨 3. Frontend Setup
+
+Open another terminal:
+
+```bash
 cd frontend
 npm install
-copy .env.example .env
-npm run dev
+```
 
-Frontend .env:
+Create `.env`:
+
+```env
 VITE_API_URL=http://localhost:5000/api
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
 
 Frontend:
-http://localhost:5173
 
-👑 Admin Access
+```text
+http://localhost:5173
+```
+
+---
+
+# 🚀 4. Running the Application
+
+Once both frontend and backend servers are running:
+
+1. Open the frontend.
+2. Register a customer account.
+3. Login.
+4. Browse products.
+5. Search or select categories.
+6. Add products to the cart.
+7. Add products to the wishlist.
+8. Proceed to checkout.
+9. Enter shipping information.
+10. Place the order.
+11. Open the Orders section.
+12. Admin can manage products and order status separately.
+
+---
+
+# 👑 Admin Access
+
 Admin credentials are configured through environment variables:
+
+```env
 ADMIN_EMAIL=your_admin_email
 ADMIN_PASSWORD=your_admin_password
+```
 
-Admin permissions are enforced on the backend.
-🔌 API Areas
-Area	Purpose
-Authentication	Registration, login, logout and authentication
-Products	Product discovery and management
-Orders	Order creation and retrieval
-Admin	Product and order administration
-Health	API health verification
+Admin permissions are enforced by the backend.
 
+Administrative operations cannot be granted simply by modifying frontend data.
 
-🌍 Production Deployment
-Backend — Render
-Root Directory: backend
-Build Command: npm install
-Start Command: npm start
+---
 
-Frontend — Render
-Root Directory: frontend
-Build Command: npm install && npm run build
-Publish Directory: dist
+# 🌍 Production Deployment
 
-Production secrets must be configured through the hosting provider and must not be committed to GitHub.
-📈 Scalability
-#chatgpt-mermaid-_r_81k_{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;fill:rgb(13, 13, 13);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-_r_81k_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_81k_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-_r_81k_ .error-icon{fill:rgb(243, 243, 243);}#chatgpt-mermaid-_r_81k_ .error-text{fill:rgb(13, 13, 13);stroke:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-_r_81k_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-_r_81k_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-_r_81k_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-_r_81k_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-_r_81k_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_81k_ .marker.cross{stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_81k_ svg{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;}#chatgpt-mermaid-_r_81k_ p{margin:0;}#chatgpt-mermaid-_r_81k_ .label{font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .cluster-label text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .cluster-label span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-_r_81k_ .label text,#chatgpt-mermaid-_r_81k_ span{fill:rgb(13, 13, 13);color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .node rect,#chatgpt-mermaid-_r_81k_ .node circle,#chatgpt-mermaid-_r_81k_ .node ellipse,#chatgpt-mermaid-_r_81k_ .node polygon,#chatgpt-mermaid-_r_81k_ .node path{fill:rgb(222, 234, 251);stroke:rgb(83, 154, 248);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .rough-node .label text,#chatgpt-mermaid-_r_81k_ .node .label text,#chatgpt-mermaid-_r_81k_ .image-shape .label,#chatgpt-mermaid-_r_81k_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-_r_81k_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .rough-node .label,#chatgpt-mermaid-_r_81k_ .node .label,#chatgpt-mermaid-_r_81k_ .image-shape .label,#chatgpt-mermaid-_r_81k_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-_r_81k_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-_r_81k_ .root .anchor path{fill:rgb(143, 143, 143)!important;stroke-width:0;stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_81k_ .arrowheadPath{fill:rgb(143, 143, 143);}#chatgpt-mermaid-_r_81k_ .edgePath .path{stroke:rgb(143, 143, 143);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .flowchart-link{stroke:rgb(143, 143, 143);fill:none;}#chatgpt-mermaid-_r_81k_ .edgeLabel{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_81k_ .edgeLabel p{background-color:rgb(252, 252, 252);}#chatgpt-mermaid-_r_81k_ .edgeLabel rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_81k_ .labelBkg{background-color:rgba(252, 252, 252, 0.5);}#chatgpt-mermaid-_r_81k_ .cluster rect{fill:rgb(243, 243, 243);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .cluster text{fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ .cluster span{color:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;font-size:12px;background:rgb(243, 243, 243);border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-_r_81k_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(13, 13, 13);}#chatgpt-mermaid-_r_81k_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-_r_81k_ .icon-shape,#chatgpt-mermaid-_r_81k_ .image-shape{background-color:rgb(252, 252, 252);text-align:center;}#chatgpt-mermaid-_r_81k_ .icon-shape p,#chatgpt-mermaid-_r_81k_ .image-shape p{background-color:rgb(252, 252, 252);padding:2px;}#chatgpt-mermaid-_r_81k_ .icon-shape .label rect,#chatgpt-mermaid-_r_81k_ .image-shape .label rect{opacity:0.5;background-color:rgb(252, 252, 252);fill:rgb(252, 252, 252);}#chatgpt-mermaid-_r_81k_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-_r_81k_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-_r_81k_ .node .neo-node{stroke:rgb(83, 154, 248);}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node rect,#chatgpt-mermaid-_r_81k_ [data-look="neo"].cluster rect,#chatgpt-mermaid-_r_81k_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-_r_81k_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_81k_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-_r_81k_-gradient);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node .neo-line path{stroke:rgb(83, 154, 248);filter:none;}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-_r_81k_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_81k_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-_r_81k_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-_r_81k_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_81k_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-_r_81k_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-_r_81k_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_81k_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(0, 79, 153);}#chatgpt-mermaid-_r_81k_ .node tspan[font-weight="normal"],#chatgpt-mermaid-_r_81k_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-_r_81k_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .node rect,#chatgpt-mermaid-_r_81k_ .node circle,#chatgpt-mermaid-_r_81k_ .node ellipse,#chatgpt-mermaid-_r_81k_ .node polygon,#chatgpt-mermaid-_r_81k_ .node path{fill:rgb(229, 243, 255);stroke:rgba(0, 0, 0, 0.1);stroke-width:1px;}#chatgpt-mermaid-_r_81k_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-_r_81k_ .node.mermaid-decision .label-container{fill:rgb(245, 250, 255);stroke:rgb(206, 219, 229);stroke-dasharray:2px,2px;}#chatgpt-mermaid-_r_81k_ .edgePaths .flowchart-link{stroke:rgb(143, 143, 143);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-_r_81k_ .marker{fill:rgb(143, 143, 143);stroke:rgb(143, 143, 143);}#chatgpt-mermaid-_r_81k_ :root{--mermaid-font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol;}React FrontendAPI LayerLoad BalancerExpress InstancesMongoDBRedis CacheObject StorageBackground JobsMonitoringCDN
+## Backend — Render
 
+```text
+Root Directory:
+backend
 
+Build Command:
+npm install
 
+Start Command:
+npm start
+```
 
-Future improvements:
+Configure production environment variables:
+
+```env
+NODE_ENV=production
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_random_jwt_secret
+CLIENT_URL=your_frontend_url
+TRUST_PROXY=1
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+```
+
+---
+
+## Frontend — Render
+
+```text
+Root Directory:
+frontend
+
+Build Command:
+npm install && npm run build
+
+Publish Directory:
+dist
+```
+
+Frontend environment variable:
+
+```env
+VITE_API_URL=your_backend_url/api
+```
+
+> Production secrets must be configured through the hosting provider and must never be committed to GitHub.
+
+---
+
+# 📈 Scalability
+
+The application is structured so additional infrastructure can be introduced as traffic grows.
+
+Potential improvements include:
+
 - Redis caching
 - Background jobs
 - External object storage
-- CDN
+- CDN integration
 - Structured logging
 - Monitoring
 - API versioning
@@ -304,23 +867,105 @@ Future improvements:
 - Audit logging
 - Database optimization
 - Horizontal backend scaling
-📌 Project Status
-Production-ready project structure
-- Frontend: Complete
-- Backend: Complete
-- Authentication: Complete
-- Products: Complete
-- Cart & Wishlist: Complete
-- Checkout: Complete
-- Orders: Complete
-- Admin: Complete
-- Security: Implemented
-- Local testing: Passed
-- Production build: Passed
-- Dependency audit: Passed
-👨‍💻 Author
-Manjeet Prabhakar Rawat
 
-GitHub: https://github.com/ManjeetPrabhakarRawat
-📄 License
-This project is intended for portfolio and development purposes.
+### Scalable Request Flow
+
+```text
+Users
+  │
+  ▼
+React Frontend
+  │
+  ▼
+Load Balancer
+  │
+  ├──────────────► Express Instance 1
+  │
+  └──────────────► Express Instance 2
+                         │
+                         ▼
+                      MongoDB
+```
+
+---
+
+# 📌 Project Status
+
+| Component | Status |
+|---|---|
+| Frontend | ✅ Complete |
+| Backend | ✅ Complete |
+| Authentication | ✅ Complete |
+| Products | ✅ Complete |
+| Cart | ✅ Complete |
+| Wishlist | ✅ Complete |
+| Checkout | ✅ Complete |
+| Orders | ✅ Complete |
+| Admin | ✅ Complete |
+| Security | ✅ Implemented |
+| Account Isolation | ✅ Implemented |
+| Local Testing | ✅ Passed |
+| Production Build | ✅ Passed |
+| Dependency Audit | ✅ Passed |
+
+---
+
+# 💡 Why NexoraCart?
+
+NexoraCart combines the core functionality of a modern e-commerce platform into one full-stack application:
+
+```text
+🛍️ Product Discovery
+        +
+🔎 Search & Categories
+        +
+🛒 Cart & Wishlist
+        +
+💳 Secure Checkout
+        +
+🧾 Order Management
+        +
+👤 Customer Accounts
+        +
+👨‍💼 Admin Management
+        +
+🔐 Security
+        ↓
+🚀 NexoraCart
+```
+
+The project focuses not only on UI but also on backend security, customer data isolation, server-side validation, inventory management, and production-oriented architecture.
+
+---
+
+# 🧰 Built With
+
+**React • Vite • JavaScript • Node.js • Express.js • MongoDB • Mongoose • JWT • bcryptjs • Helmet • CORS**
+
+---
+
+# 👨‍💻 Author
+
+## Manjeet Prabhakar Rawat
+
+Full-stack MERN developer focused on building secure, responsive, and production-oriented web applications.
+
+### GitHub
+
+https://github.com/ManjeetPrabhakarRawat
+
+---
+
+# ⭐ Support
+
+If you find NexoraCart useful, consider giving the repository a ⭐ on GitHub.
+
+---
+
+<div align="center">
+
+## 🛍️ NexoraCart
+
+### Shop smarter. Live better.
+
+</div>
