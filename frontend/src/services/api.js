@@ -6,27 +6,33 @@ const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-const readCsrf = () =>
-  document.cookie
-    .split("; ")
-    .find((x) => x.startsWith("csrf_token="))
-    ?.split("=")[1];
+let csrfToken = null;
+
+const getCsrfToken = async () => {
+  if (csrfToken) return csrfToken;
+
+  const response = await api.get("/auth/csrf");
+  csrfToken = response.data?.csrfToken || null;
+
+  return csrfToken;
+};
 
 api.interceptors.request.use(async (config) => {
   const method = (config.method || "get").toLowerCase();
+
   if (!["get", "head", "options"].includes(method)) {
-    let csrf = readCsrf();
-    if (!csrf) {
-      try {
-        await api.get("/auth/csrf");
-        csrf = readCsrf();
-      } catch (_) {
-        // Let the original request return the normal authentication/CSRF error.
-      }
+    const csrf = await getCsrfToken();
+
+    if (csrf) {
+      config.headers["x-csrf-token"] = csrf;
     }
-    if (csrf) config.headers["x-csrf-token"] = csrf;
   }
+
   return config;
 });
+
+export const clearCsrfToken = () => {
+  csrfToken = null;
+};
 
 export default api;
